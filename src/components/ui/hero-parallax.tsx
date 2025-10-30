@@ -59,7 +59,7 @@ export const HeroParallax = ({
         }}
         className="pb-20 sm:pb-32 md:pb-40"
       >
-        <motion.div className="flex flex-row-reverse space-x-reverse space-x-6 sm:space-x-10 md:space-x-16 mb-10 sm:mb-14 md:mb-16">
+        <motion.div className="flex flex-row-reverse space-x-reverse space-x-3 sm:space-x-6 md:space-x-10 lg:space-x-16 mb-6 sm:mb-10 md:mb-14 lg:mb-16">
           {firstRow.map((product) => (
             <ProductCard
               product={product}
@@ -68,7 +68,7 @@ export const HeroParallax = ({
             />
           ))}
         </motion.div>
-        <motion.div className="flex flex-row mb-10 sm:mb-14 md:mb-16 space-x-6 sm:space-x-10 md:space-x-16">
+        <motion.div className="flex flex-row mb-6 sm:mb-10 md:mb-14 lg:mb-16 space-x-3 sm:space-x-6 md:space-x-10 lg:space-x-16">
           {secondRow.map((product) => (
             <ProductCard
               product={product}
@@ -77,8 +77,7 @@ export const HeroParallax = ({
             />
           ))}
         </motion.div>
-        {/* Third row - hidden on mobile for performance */}
-        <motion.div className="hidden sm:flex flex-row-reverse space-x-reverse space-x-6 sm:space-x-10 md:space-x-16">
+        <motion.div className="flex flex-row mb-6 sm:mb-10 md:mb-14 lg:mb-16 space-x-3 sm:space-x-6 md:space-x-10 lg:space-x-16">
           {thirdRow.map((product) => (
             <ProductCard
               product={product}
@@ -168,9 +167,9 @@ export const ProductCard = ({
         y: -20,
       }}
       key={product.title}
-      className="group/product h-48 w-48 sm:h-72 sm:w-72 md:h-80 md:w-96 relative flex-shrink-0"
+      className="group/product h-32 w-32 sm:h-56 sm:w-56 md:h-72 md:w-80 lg:h-80 lg:w-96 relative flex-shrink-0"
     >
-      <div className="block group-hover/product:shadow-2xl rounded-lg sm:rounded-xl md:rounded-2xl overflow-hidden bg-stone-800">
+      <div className="block group-hover/product:shadow-2xl rounded-md sm:rounded-lg md:rounded-xl lg:rounded-2xl overflow-hidden bg-stone-800">
         <img
           src={product.thumbnail}
           height="600"
@@ -179,11 +178,10 @@ export const ProductCard = ({
           decoding="async"
           className="object-cover object-center absolute h-full w-full inset-0 will-change-transform transform-gpu"
           alt={product.title}
-          fetchPriority="low"
         />
       </div>
-      <div className="absolute inset-0 h-full w-full opacity-0 group-hover/product:opacity-80 bg-black pointer-events-none rounded-lg sm:rounded-xl md:rounded-2xl transition-opacity"></div>
-      <h2 className="absolute bottom-3 sm:bottom-4 left-3 sm:left-4 opacity-0 group-hover/product:opacity-100 text-white text-base sm:text-lg md:text-xl font-bold transition-opacity">
+      <div className="absolute inset-0 h-full w-full opacity-0 group-hover/product:opacity-80 bg-black pointer-events-none rounded-md sm:rounded-lg md:rounded-xl lg:rounded-2xl transition-opacity"></div>
+      <h2 className="absolute bottom-2 sm:bottom-3 md:bottom-4 left-2 sm:left-3 md:left-4 opacity-0 group-hover/product:opacity-100 text-white text-xs sm:text-base md:text-lg lg:text-xl font-bold transition-opacity">
         {product.title}
       </h2>
     </motion.div>
