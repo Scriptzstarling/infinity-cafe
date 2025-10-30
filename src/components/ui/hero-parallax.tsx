@@ -57,7 +57,7 @@ export const HeroParallax = ({
           translateY,
           opacity,
         }}
-        className=""
+        className="pb-20 sm:pb-32 md:pb-40"
       >
         <motion.div className="flex flex-row-reverse space-x-reverse space-x-6 sm:space-x-10 md:space-x-16 mb-10 sm:mb-14 md:mb-16">
           {firstRow.map((product) => (
@@ -77,7 +77,8 @@ export const HeroParallax = ({
             />
           ))}
         </motion.div>
-        <motion.div className="flex flex-row-reverse space-x-reverse space-x-6 sm:space-x-10 md:space-x-16">
+        {/* Third row - hidden on mobile for performance */}
+        <motion.div className="hidden sm:flex flex-row-reverse space-x-reverse space-x-6 sm:space-x-10 md:space-x-16">
           {thirdRow.map((product) => (
             <ProductCard
               product={product}
@@ -167,17 +168,18 @@ export const ProductCard = ({
         y: -20,
       }}
       key={product.title}
-      className="group/product h-56 w-56 sm:h-72 sm:w-72 md:h-80 md:w-96 relative flex-shrink-0"
+      className="group/product h-48 w-48 sm:h-72 sm:w-72 md:h-80 md:w-96 relative flex-shrink-0"
     >
-      <div className="block group-hover/product:shadow-2xl rounded-lg sm:rounded-xl md:rounded-2xl overflow-hidden">
+      <div className="block group-hover/product:shadow-2xl rounded-lg sm:rounded-xl md:rounded-2xl overflow-hidden bg-stone-800">
         <img
           src={product.thumbnail}
           height="600"
           width="600"
           loading="lazy"
           decoding="async"
-          className="object-cover object-center absolute h-full w-full inset-0 will-change-transform"
+          className="object-cover object-center absolute h-full w-full inset-0 will-change-transform transform-gpu"
           alt={product.title}
+          fetchPriority="low"
         />
       </div>
       <div className="absolute inset-0 h-full w-full opacity-0 group-hover/product:opacity-80 bg-black pointer-events-none rounded-lg sm:rounded-xl md:rounded-2xl transition-opacity"></div>
