@@ -1,4 +1,5 @@
-import { Coffee, Heart, Instagram, Mail, MapPin } from 'lucide-react';
+import { Instagram, Mail, MapPin } from 'lucide-react';
+import logo from '../images/logo.png';
 
 export default function Footer() {
   return (
@@ -11,20 +12,24 @@ export default function Footer() {
           {/* Brand */}
           <div className="md:col-span-2">
             <div className="flex items-center gap-3 mb-6">
-              <div className="p-2 bg-gradient-to-br from-amber-500 to-amber-600 rounded-xl">
-                <Coffee className="w-8 h-8 text-white" />
+              <img 
+                src={logo}
+                alt="Infinity Cafe Logo" 
+                className="w-14 h-14 object-contain"
+              />
+              <div className="flex flex-col">
+                <span className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-amber-300 via-amber-400 to-amber-500">
+                  Infinity Cafe
+                </span>
+                <span className="text-xs text-amber-400/80 font-medium tracking-wider uppercase">
+                  Patna, Bihar
+                </span>
               </div>
-              <span className="text-3xl font-bold text-white">Infinity Cafe</span>
             </div>
             <p className="text-stone-400 leading-relaxed mb-6 max-w-md">
               Where moments become memories. Experience the perfect blend of great coffee, 
               delicious food, and warm hospitality in the heart of Patna.
             </p>
-            <div className="flex items-center gap-2 text-stone-400">
-              <span>Made with</span>
-              <Heart className="w-4 h-4 text-red-500 fill-red-500 animate-pulse" />
-              <span>in Patna</span>
-            </div>
           </div>
 
           {/* Quick Links */}

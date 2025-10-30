@@ -21,11 +21,11 @@ export const HeroParallax = ({
   const springConfig = { stiffness: 300, damping: 30, bounce: 100 };
 
   const translateX = useSpring(
-    useTransform(scrollYProgress, [0, 1], [0, 1000]),
+    useTransform(scrollYProgress, [0, 1], [0, 800]),
     springConfig
   );
   const translateXReverse = useSpring(
-    useTransform(scrollYProgress, [0, 1], [0, -1000]),
+    useTransform(scrollYProgress, [0, 1], [0, -800]),
     springConfig
   );
   const rotateX = useSpring(
@@ -41,13 +41,13 @@ export const HeroParallax = ({
     springConfig
   );
   const translateY = useSpring(
-    useTransform(scrollYProgress, [0, 0.2], [-300, 200]),
+    useTransform(scrollYProgress, [0, 0.2], [-250, 150]),
     springConfig
   );
   return (
     <div
       ref={ref}
-      className="h-[180vh] sm:h-[200vh] py-12 sm:py-16 md:py-20 overflow-hidden antialiased relative flex flex-col self-auto [perspective:1000px] [transform-style:preserve-3d]"
+      className="h-[200vh] sm:h-[210vh] md:h-[220vh] py-10 sm:py-14 md:py-20 overflow-hidden antialiased relative flex flex-col self-auto [perspective:1000px] [transform-style:preserve-3d]"
     >
       <Header />
       <motion.div
@@ -59,7 +59,7 @@ export const HeroParallax = ({
         }}
         className=""
       >
-        <motion.div className="flex flex-row-reverse space-x-reverse space-x-8 sm:space-x-12 md:space-x-20 mb-12 sm:mb-16 md:mb-20">
+        <motion.div className="flex flex-row-reverse space-x-reverse space-x-6 sm:space-x-10 md:space-x-16 mb-10 sm:mb-14 md:mb-16">
           {firstRow.map((product) => (
             <ProductCard
               product={product}
@@ -68,7 +68,7 @@ export const HeroParallax = ({
             />
           ))}
         </motion.div>
-        <motion.div className="flex flex-row mb-12 sm:mb-16 md:mb-20 space-x-8 sm:space-x-12 md:space-x-20">
+        <motion.div className="flex flex-row mb-10 sm:mb-14 md:mb-16 space-x-6 sm:space-x-10 md:space-x-16">
           {secondRow.map((product) => (
             <ProductCard
               product={product}
@@ -77,7 +77,7 @@ export const HeroParallax = ({
             />
           ))}
         </motion.div>
-        <motion.div className="flex flex-row-reverse space-x-reverse space-x-8 sm:space-x-12 md:space-x-20">
+        <motion.div className="flex flex-row-reverse space-x-reverse space-x-6 sm:space-x-10 md:space-x-16">
           {thirdRow.map((product) => (
             <ProductCard
               product={product}
@@ -93,43 +93,55 @@ export const HeroParallax = ({
 
 export const Header = () => {
   return (
-    <div className="max-w-7xl relative mx-auto py-8 md:py-16 lg:py-20 px-4 sm:px-6 w-full left-0 top-0">
+    <div className="max-w-7xl relative mx-auto py-12 sm:py-16 md:py-24 lg:py-32 px-4 sm:px-6 w-full left-0 top-0">
       <div className="relative">
-        {/* Decorative glow effect */}
-        <div className="absolute -top-6 md:-top-10 -left-6 md:-left-10 w-48 h-48 md:w-72 md:h-72 bg-amber-500/30 rounded-full filter blur-3xl opacity-40 md:opacity-50 animate-pulse"></div>
+        {/* Enhanced Decorative glow effects */}
+        <div className="absolute -top-10 -left-10 w-64 h-64 md:w-96 md:h-96 bg-amber-400/20 rounded-full filter blur-3xl opacity-60 animate-pulse"></div>
+        <div className="absolute top-20 right-0 w-48 h-48 md:w-72 md:h-72 bg-orange-400/15 rounded-full filter blur-3xl opacity-40 animate-pulse delay-1000"></div>
         
-        <h1 className="relative text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold leading-tight">
-          <span className="block text-transparent bg-clip-text bg-gradient-to-r from-amber-300 via-amber-400 to-amber-500 font-serif mb-1 sm:mb-2 animate-in fade-in slide-in-from-bottom-4 duration-700">
+        <h1 className="relative text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-bold leading-tight mb-4 sm:mb-6">
+          <span className="block text-transparent bg-clip-text bg-gradient-to-r from-amber-200 via-amber-400 to-amber-500 font-serif mb-2 sm:mb-3 animate-in fade-in slide-in-from-bottom-4 duration-700 drop-shadow-2xl [text-shadow:0_0_30px_rgba(251,191,36,0.3)]">
             Infinity
           </span>
-          <span className="block text-white drop-shadow-2xl animate-in fade-in slide-in-from-bottom-6 duration-700 delay-150">
+          <span className="block text-transparent bg-clip-text bg-gradient-to-r from-white via-stone-100 to-stone-300 drop-shadow-2xl animate-in fade-in slide-in-from-bottom-6 duration-700 delay-150 [text-shadow:0_0_30px_rgba(255,255,255,0.2)]">
             Cafe
           </span>
         </h1>
         
-        {/* Decorative line */}
-        <div className="relative mt-4 md:mt-6 mb-4 md:mb-6 animate-in fade-in slide-in-from-left duration-700 delay-300">
-          <div className="h-0.5 md:h-1 w-20 md:w-32 bg-gradient-to-r from-amber-400 via-amber-500 to-transparent rounded-full"></div>
+        {/* Enhanced Decorative line */}
+        <div className="relative mt-5 md:mt-8 mb-5 md:mb-8 animate-in fade-in slide-in-from-left duration-700 delay-300">
+          <div className="h-1.5 md:h-2 w-28 md:w-40 bg-gradient-to-r from-amber-300 via-amber-500 to-amber-600 rounded-full shadow-2xl shadow-amber-500/60 animate-pulse"></div>
         </div>
         
-        <p className="max-w-2xl text-base sm:text-lg md:text-xl lg:text-2xl text-stone-100 font-light leading-relaxed animate-in fade-in slide-in-from-bottom-8 duration-700 delay-500">
-          Where every sip tells a <span className="text-amber-300 font-medium">story</span>,
+        <p className="max-w-3xl text-xl sm:text-2xl md:text-3xl lg:text-4xl text-stone-50 font-light leading-relaxed mb-8 sm:mb-10 animate-in fade-in slide-in-from-bottom-8 duration-700 delay-500 drop-shadow-lg">
+          Where every sip tells a <span className="text-amber-300 font-bold relative inline-block after:absolute after:bottom-0 after:left-0 after:w-full after:h-1 after:bg-amber-400/30 after:blur-sm">story</span>,
           <br className="hidden sm:block" />
-          and every moment becomes <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-300 to-amber-500 font-medium">infinite</span>
+          and every moment becomes <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-200 via-amber-400 to-amber-500 font-bold [text-shadow:0_0_20px_rgba(251,191,36,0.4)]">infinite</span>
         </p>
         
-        {/* Additional tagline */}
-        <div className="mt-4 md:mt-6 flex flex-wrap items-center gap-2 md:gap-3 animate-in fade-in slide-in-from-bottom-10 duration-700 delay-700">
-          <div className="flex items-center gap-1.5 md:gap-2 px-3 md:px-4 py-1.5 md:py-2 bg-amber-500/10 backdrop-blur-sm border border-amber-500/20 rounded-full">
-            <span className="w-1.5 h-1.5 md:w-2 md:h-2 bg-amber-400 rounded-full animate-pulse"></span>
-            <span className="text-amber-300 text-xs md:text-sm font-medium whitespace-nowrap">Open Daily 12 PM - 12 AM</span>
+        {/* Enhanced badges */}
+        <div className="mt-8 md:mt-10 flex flex-wrap items-center gap-3 md:gap-4 animate-in fade-in slide-in-from-bottom-10 duration-700 delay-700">
+          <div className="group flex items-center gap-2 px-5 py-3 bg-gradient-to-r from-amber-500/30 to-amber-600/30 backdrop-blur-lg border border-amber-400/40 rounded-full shadow-xl hover:shadow-amber-500/40 hover:scale-105 transition-all duration-300">
+            <span className="w-2.5 h-2.5 bg-amber-400 rounded-full animate-pulse shadow-lg shadow-amber-400/80 group-hover:shadow-xl"></span>
+            <span className="text-amber-200 text-sm md:text-base font-bold whitespace-nowrap tracking-wide">Open Daily 12 PM - 12 AM</span>
           </div>
-          <div className="flex items-center gap-1.5 md:gap-2 px-3 md:px-4 py-1.5 md:py-2 bg-stone-800/50 backdrop-blur-sm border border-stone-700/50 rounded-full">
-            <span className="text-stone-300 text-xs md:text-sm font-medium whitespace-nowrap">📍 Patna, Bihar</span>
+          <div className="group flex items-center gap-2 px-5 py-3 bg-stone-800/70 backdrop-blur-lg border border-stone-600/50 rounded-full shadow-xl hover:scale-105 transition-all duration-300 hover:border-amber-400/30">
+            <span className="text-stone-100 text-sm md:text-base font-bold whitespace-nowrap">📍 Patna, Bihar</span>
           </div>
-          <div className="flex items-center gap-1.5 md:gap-2 px-3 md:px-4 py-1.5 md:py-2 bg-gradient-to-r from-amber-500/20 to-orange-500/20 backdrop-blur-sm border border-amber-500/30 rounded-full">
-            <span className="text-amber-300 text-xs md:text-sm font-medium whitespace-nowrap">🎉 Winter Hours</span>
+          <div className="group flex items-center gap-2 px-5 py-3 bg-gradient-to-r from-orange-500/30 to-amber-500/30 backdrop-blur-lg border border-amber-400/40 rounded-full shadow-xl hover:shadow-amber-500/40 hover:scale-105 transition-all duration-300">
+            <span className="text-amber-200 text-sm md:text-base font-bold whitespace-nowrap">🎉 Winter Hours</span>
           </div>
+        </div>
+
+        {/* Added CTA Button */}
+        <div className="mt-10 md:mt-12 animate-in fade-in slide-in-from-bottom-12 duration-700 delay-1000">
+          <a
+            href="#menu"
+            className="group relative inline-block px-8 py-4 bg-gradient-to-r from-amber-500 to-amber-600 text-white font-bold text-lg rounded-full shadow-2xl shadow-amber-500/50 hover:shadow-amber-500/80 hover:scale-105 transition-all duration-300 overflow-hidden"
+          >
+            <span className="relative z-10">Explore Our Menu</span>
+            <div className="absolute inset-0 bg-gradient-to-r from-amber-600 to-amber-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+          </a>
         </div>
       </div>
     </div>
@@ -155,9 +167,9 @@ export const ProductCard = ({
         y: -20,
       }}
       key={product.title}
-      className="group/product h-64 w-64 sm:h-80 sm:w-80 md:h-96 md:w-[30rem] relative flex-shrink-0"
+      className="group/product h-56 w-56 sm:h-72 sm:w-72 md:h-80 md:w-96 relative flex-shrink-0"
     >
-      <div className="block group-hover/product:shadow-2xl rounded-xl sm:rounded-2xl overflow-hidden">
+      <div className="block group-hover/product:shadow-2xl rounded-lg sm:rounded-xl md:rounded-2xl overflow-hidden">
         <img
           src={product.thumbnail}
           height="600"
@@ -166,8 +178,8 @@ export const ProductCard = ({
           alt={product.title}
         />
       </div>
-      <div className="absolute inset-0 h-full w-full opacity-0 group-hover/product:opacity-80 bg-black pointer-events-none rounded-xl sm:rounded-2xl transition-opacity"></div>
-      <h2 className="absolute bottom-3 sm:bottom-4 left-3 sm:left-4 opacity-0 group-hover/product:opacity-100 text-white text-lg sm:text-xl md:text-2xl font-bold transition-opacity">
+      <div className="absolute inset-0 h-full w-full opacity-0 group-hover/product:opacity-80 bg-black pointer-events-none rounded-lg sm:rounded-xl md:rounded-2xl transition-opacity"></div>
+      <h2 className="absolute bottom-3 sm:bottom-4 left-3 sm:left-4 opacity-0 group-hover/product:opacity-100 text-white text-base sm:text-lg md:text-xl font-bold transition-opacity">
         {product.title}
       </h2>
     </motion.div>

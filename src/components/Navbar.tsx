@@ -22,13 +22,24 @@ export default function Navbar() {
     >
       <div className="max-w-7xl mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
-          <a href="#" className="flex items-center gap-3 group">
-            <img 
-              src={logo}
-              alt="Infinity Cafe Logo" 
-              className="w-12 h-12 object-contain group-hover:scale-110 transition-transform"
-            />
-            <span className="text-2xl font-bold text-white">Infinity Cafe</span>
+          <a href="#home" className="flex items-center gap-3 group relative">
+            <div className="relative">
+              {/* Glow effect behind logo */}
+              <div className="absolute inset-0 bg-amber-400/30 rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              <img 
+                src={logo}
+                alt="Infinity Cafe Logo" 
+                className="w-16 h-16 sm:w-20 sm:h-20 object-contain relative z-10 group-hover:scale-110 transition-transform duration-300"
+              />
+            </div>
+            <div className="flex flex-col">
+              <span className="text-2xl sm:text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-amber-300 via-amber-400 to-amber-500 group-hover:from-amber-400 group-hover:to-amber-300 transition-all duration-300">
+                Infinity Cafe
+              </span>
+              <span className="text-[10px] sm:text-xs text-amber-400/80 font-medium tracking-wider uppercase">
+                Patna, Bihar
+              </span>
+            </div>
           </a>
 
           <div className="hidden md:flex items-center gap-8">
@@ -45,6 +56,12 @@ export default function Navbar() {
             >
               <Instagram className="w-5 h-5" />
             </a>
+            <button
+              onClick={() => alert('Table reservation feature coming soon! Please call us or visit our Instagram @infinitycafepatna')}
+              className="px-6 py-2.5 bg-gradient-to-r from-amber-500 to-amber-600 text-white font-semibold rounded-full hover:from-amber-600 hover:to-amber-700 transition-all hover:scale-105 shadow-lg hover:shadow-xl hover:shadow-amber-500/20"
+            >
+              Reserve Table
+            </button>
           </div>
 
           <button
@@ -71,6 +88,12 @@ export default function Navbar() {
               <Instagram className="w-5 h-5" />
               Follow Us
             </a>
+            <button
+              onClick={() => alert('Table reservation feature coming soon! Please call us or visit our Instagram @infinitycafepatna')}
+              className="w-full px-6 py-3 bg-gradient-to-r from-amber-500 to-amber-600 text-white font-semibold rounded-full hover:from-amber-600 hover:to-amber-700 transition-all shadow-lg"
+            >
+              Reserve Table
+            </button>
           </div>
         )}
       </div>
