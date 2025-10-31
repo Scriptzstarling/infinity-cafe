@@ -31,10 +31,18 @@ export default function Contact() {
                 </div>
                 <div className="flex-1">
                   <h3 className="text-xl font-bold text-white mb-2 group-hover:text-amber-400 transition-colors">Location</h3>
-                  <p className="text-stone-300 text-lg leading-relaxed">Patna, Bihar, India</p>
+                  <p className="text-stone-300 text-base leading-relaxed mb-1">
+                    <span className="font-semibold text-amber-400">16th Floor, Biscomaun Bhawan</span>
+                  </p>
+                  <p className="text-stone-300 text-sm leading-relaxed mb-3">
+                    West Gandhi Maidan, Raja Ji Salai, Lodipur<br />
+                    Patna, Bihar 800001
+                  </p>
                   <a 
-                    href="#contact" 
-                    className="inline-flex items-center gap-2 text-amber-400 mt-3 group/link hover:gap-3 transition-all"
+                    href="https://www.google.com/maps/place/Biscomaun+Bhawan" 
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 text-amber-400 group/link hover:gap-3 transition-all"
                   >
                     <span className="text-sm font-medium">View on map</span>
                     <ArrowRight className="w-4 h-4" />
@@ -117,14 +125,32 @@ export default function Contact() {
             <div className="absolute inset-0 bg-gradient-to-br from-amber-500 to-amber-600 rounded-3xl transform rotate-3"></div>
             <div className="relative h-[600px] bg-stone-800 rounded-3xl overflow-hidden shadow-2xl border border-stone-700/50 hover:rotate-0 transition-transform duration-500">
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d115106.06203422786!2d85.06381407910156!3d25.594095!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39ed58dce729e0f7%3A0x4068b5f9f6cdb4a6!2sPatna%2C%20Bihar!5e0!3m2!1sen!2sin!4v1635000000000!5m2!1sen!2sin"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3597.984872954595!2d85.13515631501648!3d25.611917983731774!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39ed584a7b1a0e69%3A0x4c6c92f0b7f8e8a8!2sBiscomaun%20Bhawan!5e0!3m2!1sen!2sin!4v1635000000000!5m2!1sen!2sin"
                 width="100%"
                 height="100%"
                 style={{ border: 0 }}
                 allowFullScreen
                 loading="lazy"
-                title="Infinity Cafe Location"
+                title="Infinity Cafe - Biscomaun Bhawan, 16th Floor, Patna"
               ></iframe>
+              
+              {/* Bottom Info Bar */}
+              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-stone-900 via-stone-900/95 to-transparent p-6 z-10">
+                <div className="flex items-center justify-between">
+                  <div>
+                    <p className="text-white font-bold text-lg mb-1">🗺️ Biscomaun Bhawan</p>
+                    <p className="text-stone-300 text-sm">West Gandhi Maidan, Patna</p>
+                  </div>
+                  <a
+                    href="https://www.google.com/maps/place/Biscomaun+Bhawan,+West+Gandhi+Maidan,+Patna,+Bihar+800001"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="px-5 py-2.5 bg-gradient-to-r from-amber-500 to-amber-600 text-white text-sm font-bold rounded-full hover:scale-105 transition-transform shadow-lg hover:shadow-amber-500/50"
+                  >
+                    Get Directions
+                  </a>
+                </div>
+              </div>
             </div>
           </div>
         </div>

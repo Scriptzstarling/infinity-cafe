@@ -94,29 +94,29 @@ export default function Menu() {
         </div>
 
         {/* Menu Action Buttons */}
-        <div className="flex justify-center gap-4 mb-16">
+        <div className="flex flex-col sm:flex-row justify-center gap-3 sm:gap-4 mb-16">
           <button 
             onClick={() => setShowFullMenu(!showFullMenu)}
-            className="group flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-amber-500 to-orange-500 text-white font-bold rounded-full shadow-2xl shadow-amber-500/30 hover:shadow-amber-500/50 hover:scale-105 transition-all duration-300 overflow-hidden relative"
+            className="group flex items-center justify-center gap-2 sm:gap-3 px-5 py-3 sm:px-6 sm:py-3.5 md:px-8 md:py-4 bg-gradient-to-r from-amber-500 to-orange-500 text-white font-bold text-sm sm:text-base rounded-full shadow-2xl shadow-amber-500/30 hover:shadow-amber-500/50 hover:scale-105 transition-all duration-300 overflow-hidden relative"
           >
             <span className="relative z-10">{showFullMenu ? 'Show Less' : 'View Full Menu'}</span>
-            <ExternalLink className="w-5 h-5 relative z-10 group-hover:rotate-12 transition-transform" />
+            <ExternalLink className="w-4 h-4 sm:w-5 sm:h-5 relative z-10 group-hover:rotate-12 transition-transform" />
             <div className="absolute inset-0 bg-gradient-to-r from-orange-500 to-amber-500 opacity-0 group-hover:opacity-100 transition-opacity"></div>
           </button>
           
-          <button className="group flex items-center gap-3 px-8 py-4 bg-stone-800 border-2 border-amber-500/30 text-amber-400 font-bold rounded-full hover:bg-amber-500 hover:text-white hover:border-amber-500 transition-all duration-300">
-            <Download className="w-5 h-5 group-hover:animate-bounce" />
+          <button className="group flex items-center justify-center gap-2 sm:gap-3 px-5 py-3 sm:px-6 sm:py-3.5 md:px-8 md:py-4 bg-stone-800 border-2 border-amber-500/30 text-amber-400 font-bold text-sm sm:text-base rounded-full hover:bg-amber-500 hover:text-white hover:border-amber-500 transition-all duration-300">
+            <Download className="w-4 h-4 sm:w-5 sm:h-5 group-hover:animate-bounce" />
             <span>Download PDF</span>
           </button>
         </div>
 
         {/* Special Offers Banner */}
-        <div className="mb-16 grid md:grid-cols-3 gap-4">
+        <div className="mb-16 grid sm:grid-cols-2 md:grid-cols-3 gap-3 sm:gap-4">
           {specialOffers.map((offer, idx) => (
-            <div key={idx} className="bg-gradient-to-r from-amber-500/10 to-orange-500/10 border border-amber-500/20 rounded-2xl p-6 text-center backdrop-blur-sm hover:scale-105 transition-transform">
-              <h4 className="text-amber-400 font-bold text-lg mb-2">{offer.title}</h4>
-              <p className="text-stone-300 text-sm mb-2">{offer.time}</p>
-              <p className="text-white font-medium">{offer.offer}</p>
+            <div key={idx} className="bg-gradient-to-r from-amber-500/10 to-orange-500/10 border border-amber-500/20 rounded-2xl p-4 sm:p-6 text-center backdrop-blur-sm hover:scale-105 transition-transform">
+              <h4 className="text-amber-400 font-bold text-base sm:text-lg mb-1 sm:mb-2">{offer.title}</h4>
+              <p className="text-stone-300 text-xs sm:text-sm mb-1 sm:mb-2">{offer.time}</p>
+              <p className="text-white text-sm sm:text-base font-medium">{offer.offer}</p>
             </div>
           ))}
         </div>

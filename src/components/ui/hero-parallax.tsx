@@ -120,16 +120,16 @@ export const Header = () => {
         </p>
         
         {/* Enhanced badges */}
-        <div className="mt-8 md:mt-10 flex flex-wrap items-center gap-3 md:gap-4 animate-in fade-in slide-in-from-bottom-10 duration-700 delay-700">
-          <div className="group flex items-center gap-2 px-5 py-3 bg-gradient-to-r from-amber-500/30 to-amber-600/30 backdrop-blur-lg border border-amber-400/40 rounded-full shadow-xl hover:shadow-amber-500/40 hover:scale-105 transition-all duration-300">
-            <span className="w-2.5 h-2.5 bg-amber-400 rounded-full animate-pulse shadow-lg shadow-amber-400/80 group-hover:shadow-xl"></span>
-            <span className="text-amber-200 text-sm md:text-base font-bold whitespace-nowrap tracking-wide">Open Daily 12 PM - 12 AM</span>
+        <div className="mt-8 md:mt-10 flex flex-wrap items-center gap-2 sm:gap-3 md:gap-4 animate-in fade-in slide-in-from-bottom-10 duration-700 delay-700">
+          <div className="group flex items-center gap-1.5 sm:gap-2 px-3 py-2 sm:px-4 sm:py-2.5 md:px-5 md:py-3 bg-gradient-to-r from-amber-500/30 to-amber-600/30 backdrop-blur-lg border border-amber-400/40 rounded-full shadow-xl hover:shadow-amber-500/40 hover:scale-105 transition-all duration-300">
+            <span className="w-2 h-2 sm:w-2.5 sm:h-2.5 bg-amber-400 rounded-full animate-pulse shadow-lg shadow-amber-400/80 group-hover:shadow-xl"></span>
+            <span className="text-amber-200 text-xs sm:text-sm md:text-base font-bold whitespace-nowrap tracking-wide">Open Daily 12 PM - 12 AM</span>
           </div>
-          <div className="group flex items-center gap-2 px-5 py-3 bg-stone-800/70 backdrop-blur-lg border border-stone-600/50 rounded-full shadow-xl hover:scale-105 transition-all duration-300 hover:border-amber-400/30">
-            <span className="text-stone-100 text-sm md:text-base font-bold whitespace-nowrap">📍 Patna, Bihar</span>
+          <div className="group flex items-center gap-1.5 sm:gap-2 px-3 py-2 sm:px-4 sm:py-2.5 md:px-5 md:py-3 bg-stone-800/70 backdrop-blur-lg border border-stone-600/50 rounded-full shadow-xl hover:scale-105 transition-all duration-300 hover:border-amber-400/30">
+            <span className="text-stone-100 text-xs sm:text-sm md:text-base font-bold whitespace-nowrap">📍 Patna, Bihar</span>
           </div>
-          <div className="group flex items-center gap-2 px-5 py-3 bg-gradient-to-r from-orange-500/30 to-amber-500/30 backdrop-blur-lg border border-amber-400/40 rounded-full shadow-xl hover:shadow-amber-500/40 hover:scale-105 transition-all duration-300">
-            <span className="text-amber-200 text-sm md:text-base font-bold whitespace-nowrap">🎉 Winter Hours</span>
+          <div className="group flex items-center gap-1.5 sm:gap-2 px-3 py-2 sm:px-4 sm:py-2.5 md:px-5 md:py-3 bg-gradient-to-r from-orange-500/30 to-amber-500/30 backdrop-blur-lg border border-amber-400/40 rounded-full shadow-xl hover:shadow-amber-500/40 hover:scale-105 transition-all duration-300">
+            <span className="text-amber-200 text-xs sm:text-sm md:text-base font-bold whitespace-nowrap">🎉 Winter Hours</span>
           </div>
         </div>
 
@@ -137,7 +137,7 @@ export const Header = () => {
         <div className="mt-10 md:mt-12 animate-in fade-in slide-in-from-bottom-12 duration-700 delay-1000">
           <a
             href="#menu"
-            className="group relative inline-block px-8 py-4 bg-gradient-to-r from-amber-500 to-amber-600 text-white font-bold text-lg rounded-full shadow-2xl shadow-amber-500/50 hover:shadow-amber-500/80 hover:scale-105 transition-all duration-300 overflow-hidden"
+            className="group relative inline-block px-5 py-2.5 sm:px-6 sm:py-3 md:px-8 md:py-4 bg-gradient-to-r from-amber-500 to-amber-600 text-white font-bold text-sm sm:text-base md:text-lg rounded-full shadow-2xl shadow-amber-500/50 hover:shadow-amber-500/80 hover:scale-105 transition-all duration-300 overflow-hidden"
           >
             <span className="relative z-10">Explore Our Menu</span>
             <div className="absolute inset-0 bg-gradient-to-r from-amber-600 to-amber-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
@@ -167,7 +167,7 @@ export const ProductCard = ({
         y: -20,
       }}
       key={product.title}
-      className="group/product h-48 w-48 sm:h-64 sm:w-64 md:h-72 md:w-80 lg:h-80 lg:w-96 relative flex-shrink-0"
+      className="group/product h-40 w-40 sm:h-56 sm:w-56 md:h-72 md:w-80 lg:h-80 lg:w-96 relative flex-shrink-0"
     >
       <div className="block group-hover/product:shadow-2xl rounded-lg sm:rounded-xl md:rounded-2xl overflow-hidden bg-stone-800">
         <img
