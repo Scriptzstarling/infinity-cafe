@@ -18,14 +18,14 @@ export const HeroParallax = ({
     offset: ["start start", "end start"],
   });
 
-  const springConfig = { stiffness: 300, damping: 30, bounce: 100 };
+  const springConfig = { stiffness: 100, damping: 40, bounce: 0 };
 
   const translateX = useSpring(
-    useTransform(scrollYProgress, [0, 1], [0, 600]),
+    useTransform(scrollYProgress, [0, 1], [0, 400]),
     springConfig
   );
   const translateXReverse = useSpring(
-    useTransform(scrollYProgress, [0, 1], [0, -600]),
+    useTransform(scrollYProgress, [0, 1], [0, -400]),
     springConfig
   );
   const rotateX = useSpring(
@@ -41,13 +41,13 @@ export const HeroParallax = ({
     springConfig
   );
   const translateY = useSpring(
-    useTransform(scrollYProgress, [0, 0.2], [-250, 150]),
+    useTransform(scrollYProgress, [0, 0.3], [-100, 50]),
     springConfig
   );
   return (
     <div
       ref={ref}
-      className="h-[200vh] sm:h-[210vh] md:h-[220vh] py-10 sm:py-14 md:py-20 overflow-hidden antialiased relative flex flex-col self-auto [perspective:1000px] [transform-style:preserve-3d]"
+      className="h-[130vh] sm:h-[160vh] md:h-[180vh] lg:h-[200vh] py-8 sm:py-12 md:py-16 lg:py-20 overflow-hidden antialiased relative flex flex-col self-auto [perspective:1000px] [transform-style:preserve-3d]"
     >
       <Header />
       <motion.div
@@ -57,9 +57,9 @@ export const HeroParallax = ({
           translateY,
           opacity,
         }}
-        className="pb-20 sm:pb-32 md:pb-40"
+        className="pb-8 sm:pb-16 md:pb-24 lg:pb-32"
       >
-        <motion.div className="flex flex-row-reverse space-x-reverse space-x-3 sm:space-x-6 md:space-x-10 lg:space-x-16 mb-6 sm:mb-10 md:mb-14 lg:mb-16">
+        <motion.div className="flex flex-row-reverse space-x-reverse space-x-3 sm:space-x-4 md:space-x-6 lg:space-x-8 mb-4 sm:mb-6 md:mb-8 lg:mb-10">
           {firstRow.map((product) => (
             <ProductCard
               product={product}
@@ -68,7 +68,7 @@ export const HeroParallax = ({
             />
           ))}
         </motion.div>
-        <motion.div className="flex flex-row mb-6 sm:mb-10 md:mb-14 lg:mb-16 space-x-3 sm:space-x-6 md:space-x-10 lg:space-x-16">
+        <motion.div className="flex flex-row mb-4 sm:mb-6 md:mb-8 lg:mb-10 space-x-3 sm:space-x-4 md:space-x-6 lg:space-x-8">
           {secondRow.map((product) => (
             <ProductCard
               product={product}
@@ -77,7 +77,7 @@ export const HeroParallax = ({
             />
           ))}
         </motion.div>
-        <motion.div className="flex flex-row mb-6 sm:mb-10 md:mb-14 lg:mb-16 space-x-3 sm:space-x-6 md:space-x-10 lg:space-x-16">
+        <motion.div className="flex flex-row mb-4 sm:mb-6 md:mb-8 lg:mb-10 space-x-3 sm:space-x-4 md:space-x-6 lg:space-x-8">
           {thirdRow.map((product) => (
             <ProductCard
               product={product}
@@ -93,7 +93,7 @@ export const HeroParallax = ({
 
 export const Header = () => {
   return (
-    <div className="max-w-7xl relative mx-auto py-12 sm:py-16 md:py-24 lg:py-32 px-4 sm:px-6 w-full left-0 top-0">
+    <div className="max-w-7xl relative mx-auto py-8 sm:py-12 md:py-16 lg:py-20 px-4 sm:px-6 w-full left-0 top-0">
       <div className="relative">
         {/* Enhanced Decorative glow effects */}
         <div className="absolute -top-10 -left-10 w-64 h-64 md:w-96 md:h-96 bg-amber-400/20 rounded-full filter blur-3xl opacity-60 animate-pulse"></div>
@@ -167,17 +167,18 @@ export const ProductCard = ({
         y: -20,
       }}
       key={product.title}
-      className="group/product h-32 w-32 sm:h-56 sm:w-56 md:h-72 md:w-80 lg:h-80 lg:w-96 relative flex-shrink-0"
+      className="group/product h-48 w-48 sm:h-64 sm:w-64 md:h-72 md:w-80 lg:h-80 lg:w-96 relative flex-shrink-0"
     >
-      <div className="block group-hover/product:shadow-2xl rounded-md sm:rounded-lg md:rounded-xl lg:rounded-2xl overflow-hidden bg-stone-800">
+      <div className="block group-hover/product:shadow-2xl rounded-lg sm:rounded-xl md:rounded-2xl overflow-hidden bg-stone-800">
         <img
           src={product.thumbnail}
-          height="600"
-          width="600"
+          height="400"
+          width="400"
           loading="lazy"
           decoding="async"
-          className="object-cover object-center absolute h-full w-full inset-0 will-change-transform transform-gpu"
+          className="object-cover object-center absolute h-full w-full inset-0 will-change-transform transform-gpu transition-transform duration-300 ease-out"
           alt={product.title}
+          style={{ contentVisibility: 'auto' }}
         />
       </div>
       <div className="absolute inset-0 h-full w-full opacity-0 group-hover/product:opacity-80 bg-black pointer-events-none rounded-md sm:rounded-lg md:rounded-xl lg:rounded-2xl transition-opacity"></div>
