@@ -17,7 +17,7 @@ export default function Navbar() {
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled ? 'bg-stone-900/95 backdrop-blur-md shadow-2xl' : 'bg-transparent'
+        scrolled || isOpen ? 'bg-stone-900/95 backdrop-blur-md shadow-2xl' : 'bg-transparent'
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 py-4">
@@ -74,11 +74,11 @@ export default function Navbar() {
 
         {isOpen && (
           <div className="md:hidden mt-6 pb-4 space-y-4">
-            <a href="#home" className="block text-white hover:text-amber-400 transition-colors font-medium">Home</a>
-            <a href="#about" className="block text-white hover:text-amber-400 transition-colors font-medium">About</a>
-            <a href="#menu" className="block text-white hover:text-amber-400 transition-colors font-medium">Menu</a>
-            <a href="#gallery" className="block text-white hover:text-amber-400 transition-colors font-medium">Gallery</a>
-            <a href="#contact" className="block text-white hover:text-amber-400 transition-colors font-medium">Contact</a>
+            <a href="#home" onClick={() => setIsOpen(false)} className="block text-white hover:text-amber-400 transition-colors font-medium">Home</a>
+            <a href="#about" onClick={() => setIsOpen(false)} className="block text-white hover:text-amber-400 transition-colors font-medium">About</a>
+            <a href="#menu" onClick={() => setIsOpen(false)} className="block text-white hover:text-amber-400 transition-colors font-medium">Menu</a>
+            <a href="#gallery" onClick={() => setIsOpen(false)} className="block text-white hover:text-amber-400 transition-colors font-medium">Gallery</a>
+            <a href="#contact" onClick={() => setIsOpen(false)} className="block text-white hover:text-amber-400 transition-colors font-medium">Contact</a>
             <a
               href="https://www.instagram.com/infinitycafepatna/?hl=en"
               target="_blank"

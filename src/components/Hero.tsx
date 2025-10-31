@@ -21,7 +21,7 @@ export default function Hero() {
   const scaleDown = Math.max(0.8, 1 - scrollY / 2000);
 
   return (
-    <section className="relative h-screen flex items-center justify-center overflow-hidden">
+    <section id="home" className="relative h-screen flex items-center justify-center overflow-hidden pt-20 md:pt-0">
       <div className="absolute inset-0 z-0">
         <div
           className="absolute inset-0 bg-gradient-to-br from-amber-900/95 via-amber-800/90 to-stone-900/95 z-10"
